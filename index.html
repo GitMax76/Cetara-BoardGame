@@ -24,7 +24,7 @@
                         'deep-sea': '#0b1d3a',
                         'mid-sea': '#143464',
                         'light-sea': '#1f4b8e',
-                        'line-art': '#e0f2fe', /* Il colore del tratto del tuo pattern */
+                        'line-art': '#e0f2fe',
                         'lampara': '#fcd34d',
                     },
                     fontFamily: {
@@ -49,14 +49,12 @@
         body {
             background-color: #0b1d3a;
             color: #e0f2fe;
-            /* Simuliamo il gradiente marino del tuo pattern */
             background-image: 
                 radial-gradient(circle at 50% 0%, rgba(31, 75, 142, 0.4) 0%, transparent 60%),
                 radial-gradient(circle at 50% 100%, rgba(11, 29, 58, 1) 0%, transparent 100%);
             background-attachment: fixed;
         }
 
-        /* Stile Mappa Nautica per i riquadri */
         .pattern-box {
             background: rgba(20, 52, 100, 0.3);
             border: 1px solid rgba(224, 242, 254, 0.2);
@@ -71,7 +69,6 @@
             transform: translateY(-2px);
         }
 
-        /* Decorazioni agli angoli dei box (stile mappa) */
         .corner-deco {
             position: absolute;
             width: 10px;
@@ -84,13 +81,11 @@
         .corner-bl { bottom: -1px; left: -1px; border-bottom: 1px solid; border-left: 1px solid; }
         .corner-br { bottom: -1px; right: -1px; border-bottom: 1px solid; border-right: 1px solid; }
 
-        /* Effetto luce lampara */
         .lampara-glow {
             text-shadow: 0 0 10px rgba(252, 211, 77, 0.6);
             color: #fcd34d;
         }
 
-        /* Tasselli componenti */
         .token-style {
             border: 1px dashed rgba(224, 242, 254, 0.3);
             border-radius: 50%;
@@ -107,18 +102,13 @@
             box-shadow: 0 0 10px rgba(252, 211, 77, 0.3);
         }
 
-        /* Classe di utilità per l'animazione al viewport */
-        .animate-on-scroll {
-            opacity: 0;
-        }
-        .animate-on-scroll.is-visible {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
+        .animate-on-scroll { opacity: 0; }
+        .animate-on-scroll.is-visible { animation: fadeInUp 0.8s ease-out forwards; }
     </style>
 </head>
 <body class="font-body antialiased min-h-screen relative">
 
-    <!-- Navbar Minimalista (Line Art Style) -->
+    <!-- Navbar -->
     <nav class="border-b border-line-art/20 bg-deep-sea/80 backdrop-blur-md sticky top-0 z-50 animate-fade-in-up">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -137,8 +127,6 @@
 
     <!-- Hero Section -->
     <section class="relative pt-16 pb-20 lg:pt-24 lg:pb-28 overflow-hidden">
-        
-        <!-- Elementi decorativi di sfondo (stile pattern) -->
         <i class="ph-thin ph-waves absolute top-10 right-20 text-6xl opacity-10 animate-pulse-slow"></i>
         <i class="ph-thin ph-fish absolute bottom-20 left-10 text-8xl opacity-10 animate-pulse-slow" style="animation-delay: 1s;"></i>
         <i class="ph-thin ph-jellyfish absolute top-40 left-1/4 text-6xl opacity-10 animate-pulse-slow" style="animation-delay: 2s;"></i>
@@ -146,20 +134,16 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 
-                <!-- Testo Hero -->
                 <div class="order-2 lg:order-1 text-center lg:text-left animate-fade-in-up">
                     <p class="text-xs uppercase tracking-[0.3em] text-line-art/70 mb-4 border-b border-line-art/20 inline-block pb-1">Un gioco da tavolo di M. Sabato</p>
-                    <h1 class="text-5xl md:text-7xl font-title font-bold text-line-art mb-2 leading-tight">
-                        CETARA
-                    </h1>
-                    <h2 class="text-2xl md:text-3xl font-title text-line-art/80 mb-6 italic lampara-glow">
-                        La Notte delle Lampare
-                    </h2>
-                    <p class="text-lg font-light text-line-art/70 mb-10 max-w-lg mx-auto lg:mx-0">
-                        Esplorazione tattica, navigazione e aste silenziose sul tabellone trasparente del golfo.
+                    <h1 class="text-5xl md:text-7xl font-title font-bold text-line-art mb-2 leading-tight">CETARA</h1>
+                    <h2 class="text-2xl md:text-3xl font-title text-line-art/80 mb-6 italic lampara-glow">La Notte delle Lampare</h2>
+                    
+                    <!-- Frase più evocativa e familiare -->
+                    <p class="text-lg font-light text-line-art/70 mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                        Lasciati affascinare dalla magia di un'antica tradizione della Costiera Amalfitana. Accendi la tua lampara, naviga sotto un cielo di stelle e porta al porto il tesoro del mare in questo coinvolgente gioco per tutta la famiglia.
                     </p>
                     
-                    <!-- Icone statistiche stile Line Art -->
                     <div class="flex flex-wrap justify-center lg:justify-start gap-8 mb-8 border-t border-line-art/20 pt-6 animate-fade-in-up" style="animation-delay: 0.3s;">
                         <div class="flex flex-col items-center group">
                             <i class="ph-thin ph-users-three text-4xl mb-2 text-lampara group-hover:scale-110 transition-transform"></i>
@@ -176,12 +160,10 @@
                     </div>
                 </div>
 
-                <!-- Immagine Box Art (Questa è la TUA immagine) -->
                 <div class="order-1 lg:order-2 flex justify-center relative animate-fade-in-up" style="animation-delay: 0.5s;">
-                    <!-- Riquadro decorativo attorno alla scatola -->
                     <div class="absolute inset-0 border border-line-art/30 transform rotate-3 rounded-lg pointer-events-none"></div>
                     <img src="IMG_9466.png" alt="Box Art di Cetara" 
-                         onerror="this.src='https://placehold.co/500x500/143464/e0f2fe?text=Box+Art+(IMG_9466.png+qui)'"
+                         onerror="this.src='https://placehold.co/500x500/143464/e0f2fe?text=Box+Art+(IMG_9466.png)'"
                          class="w-full max-w-[450px] rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-10 relative hover:scale-105 transition-transform duration-500">
                 </div>
 
@@ -193,10 +175,8 @@
     <section id="ambientazione" class="py-16 relative animate-on-scroll">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="pattern-box p-8 md:p-12 relative text-center lg:text-left">
-                <div class="corner-deco corner-tl"></div>
-                <div class="corner-deco corner-tr"></div>
-                <div class="corner-deco corner-bl"></div>
-                <div class="corner-deco corner-br"></div>
+                <div class="corner-deco corner-tl"></div><div class="corner-deco corner-tr"></div>
+                <div class="corner-deco corner-bl"></div><div class="corner-deco corner-br"></div>
 
                 <div class="flex flex-col lg:flex-row gap-8 items-center">
                     <div class="w-32 h-32 shrink-0 flex items-center justify-center border border-line-art/30 rounded-full animate-pulse-slow">
@@ -205,10 +185,10 @@
                     <div>
                         <h2 class="text-2xl font-title font-bold mb-4 uppercase tracking-widest text-line-art border-b border-line-art/20 pb-2 inline-block">Il Richiamo del Mare</h2>
                         <p class="font-light leading-relaxed text-line-art/80 mb-4 text-justify">
-                            Nelle calde notti d'estate, il borgo di Cetara si prepara alla sua antica danza. Le potenti lampade si accendono, fendendo il buio del Tirreno. È la <strong class="lampara-glow font-normal">Notte delle Lampare</strong>.
+                            Nelle calde notti d'estate, il borgo di Cetara si prepara alla sua antica danza. Le potenti lampade si accendono, fendendo il buio del Tirreno. È la <strong class="lampara-glow font-normal">Notte delle Lampare</strong>, tra storie di pescatori e la trepidante attesa al porto.
                         </p>
                         <p class="font-light leading-relaxed text-line-art/80 text-justify">
-                            Siete i capitani di queste flotte. Il vostro compito? Guidare la barca nel buio, scovare banchi di Alici e Tonni con il fascio di luce, e scegliere all'alba: vendere al mercato per un guadagno sicuro, o destinare il pescato alla colatura per costruire una leggenda?
+                            Siete i capitani di queste flotte. Il vostro compito? Guidare la barca nel buio, scovare banchi di Alici e Tonni con il fascio di luce, e scegliere all'alba: vendere al mercato per un guadagno sicuro, o destinare il pescato alla colatura per costruire una leggenda legata al territorio?
                         </p>
                     </div>
                 </div>
@@ -219,7 +199,6 @@
     <!-- Flusso del Gioco -->
     <section id="flusso" class="py-16 animate-on-scroll">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
             <div class="text-center mb-12 flex flex-col items-center">
                 <i class="ph-thin ph-compass text-5xl mb-4 text-line-art/50 animate-pulse-slow"></i>
                 <h2 class="text-3xl font-title font-bold uppercase tracking-widest text-line-art mb-2">Il Flusso del Gioco</h2>
@@ -227,7 +206,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
                 <!-- Fase 1 -->
                 <div class="pattern-box p-6 relative flex flex-col group animate-on-scroll" style="animation-delay: 0.2s;">
                     <i class="ph-thin ph-sun text-4xl mb-4 text-lampara group-hover:scale-110 transition-transform"></i>
@@ -243,21 +221,18 @@
                     </ul>
                 </div>
 
-                <!-- Fase 2 (Core Mechanic) -->
+                <!-- Fase 2 -->
                 <div class="pattern-box p-6 relative flex flex-col border-lampara/40 shadow-[0_0_15px_rgba(252,211,77,0.15)] group animate-on-scroll" style="animation-delay: 0.4s;">
                     <div class="corner-deco corner-tl border-lampara"></div><div class="corner-deco corner-tr border-lampara"></div>
                     <div class="corner-deco corner-bl border-lampara"></div><div class="corner-deco corner-br border-lampara"></div>
-                    
                     <i class="ph-thin ph-moon-stars text-4xl mb-4 text-line-art group-hover:scale-110 transition-transform"></i>
                     <h3 class="text-lg font-title font-bold mb-1 uppercase tracking-wider lampara-glow">2. La Notte</h3>
                     <p class="text-xs uppercase tracking-widest text-line-art/50 mb-4 pb-2 border-b border-line-art/20">Navigazione alla cieca</p>
-                    
                     <div class="bg-deep-sea/50 border border-line-art/20 rounded p-3 mb-4 text-center">
                         <i class="ph-thin ph-waves text-2xl text-line-art/50 mb-2 animate-pulse-slow"></i>
                         <h4 class="font-bold text-sm uppercase tracking-widest text-lampara mb-1">Tabellone in Acetato</h4>
                         <p class="text-xs font-light text-line-art/80 italic">La Mezzaluna magnetica sotto la tua barca svela i pesci nascosti per effetto ottico!</p>
                     </div>
-
                     <p class="text-xs font-light text-line-art/70 mt-auto">
                         <strong class="text-line-art">Muovi:</strong> Avanti (1 PM) o Virata (2 PM).<br>
                         <strong class="text-line-art mt-1 inline-block">Pesca:</strong> Spendi Gettoni Lampara dove illumini. Attento alle Meduse (-1 PV)!
@@ -270,7 +245,6 @@
                     <h3 class="text-lg font-title font-bold mb-1 uppercase tracking-wider">3. L'Alba</h3>
                     <p class="text-xs uppercase tracking-widest text-line-art/50 mb-4 pb-2 border-b border-line-art/20">La Grande Scelta</p>
                     <p class="text-sm font-light text-line-art/80 mb-4">Tutti rientrano. Per ogni pesce scegli il suo destino:</p>
-                    
                     <div class="space-y-3 mt-auto">
                         <div class="border border-line-art/20 p-2 rounded text-xs hover:border-lampara/50 transition-colors">
                             <strong class="uppercase text-line-art block mb-1 flex items-center gap-1"><i class="ph-thin ph-storefront"></i> A. Vendita</strong>
@@ -282,22 +256,19 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- La Sfida (Botti e Maggioranze) -->
+    <!-- La Sfida -->
     <section class="py-16 border-t border-b border-line-art/10 bg-mid-sea/20 animate-on-scroll">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <i class="ph-thin ph-scales text-5xl mb-4 text-line-art/50 animate-pulse-slow"></i>
             <h2 class="text-2xl font-title font-bold uppercase tracking-widest text-line-art mb-6">Le Botti della Conservazione</h2>
-            
             <p class="font-light text-sm max-w-2xl mx-auto mb-8 text-line-art/80">
                 Lo spazio è limitato e i barili si riempiono dal basso. Se c'è pareggio, vince chi ha investito per primo (più in basso). Ma attenzione alla <strong class="text-lampara">Regola d'Oro</strong>: un barile assegna i Punti di Maggioranza <em>solo se viene completamente sigillato</em>!
             </p>
 
-            <!-- Disegno Stilizzato Line Art dei Barili -->
             <div class="flex flex-wrap justify-center gap-12 mt-8">
                 <!-- Vaso Piccolo -->
                 <div class="flex flex-col items-center group">
@@ -310,7 +281,6 @@
                     </div>
                     <span class="text-xs mt-3 font-bold text-lampara">1°: 12 PV | 2°: 6 PV</span>
                 </div>
-
                 <!-- Vaso Grande -->
                 <div class="flex flex-col items-center group">
                     <span class="text-xs uppercase tracking-widest mb-2 text-line-art/60">Vaso Grande</span>
@@ -323,12 +293,10 @@
                     </div>
                     <span class="text-xs mt-3 font-bold text-lampara">1°: 16 PV | 2°: 8 PV</span>
                 </div>
-
                 <!-- Terzigno -->
                 <div class="flex flex-col items-center group">
                     <span class="text-xs uppercase tracking-widest mb-2 text-line-art/60">Terzigno (Colatura)</span>
                     <div class="w-24 h-40 border border-line-art rounded-b-lg relative flex flex-col justify-end p-1 gap-1 bg-deep-sea/50 group-hover:border-lampara transition-colors">
-                        <!-- Linea tratteggiata per lo spazio non riempito -->
                         <div class="w-full h-1/8 border border-dashed border-line-art/50 rounded-sm"></div>
                         <div class="w-full h-1/8 border border-line-art/50 rounded-sm"></div>
                         <div class="w-full h-1/8 border border-line-art/50 rounded-sm"></div>
@@ -342,11 +310,10 @@
         </div>
     </section>
 
-    <!-- Componenti (Stile Line Art Grid) -->
+    <!-- Componenti -->
     <section id="componenti" class="py-16 animate-on-scroll">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-2xl font-title font-bold text-center uppercase tracking-widest text-line-art mb-10">Nella Scatola</h2>
-            
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                 <div class="flex flex-col items-center group">
                     <div class="token-style"><i class="ph-thin ph-map-trifold text-3xl"></i></div>
@@ -392,7 +359,7 @@
         </div>
     </section>
 
-    <!-- Footer Istituzionale (Line Art Style) -->
+    <!-- Footer -->
     <footer class="border-t border-line-art/20 pt-12 pb-8 bg-deep-sea animate-on-scroll">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left mb-8 border-b border-line-art/10 pb-8">
@@ -400,34 +367,38 @@
                 <!-- Autore -->
                 <div>
                     <h3 class="text-xs uppercase tracking-widest text-line-art/50 mb-3 flex items-center justify-center md:justify-start gap-2">
-                        <i class="ph-thin ph-pen-nib"></i> Autore
+                        <i class="ph-thin ph-pen-nib text-lg"></i> Autore
                     </h3>
                     <p class="font-title text-lg mb-2">M. Sabato</p>
                     <a href="https://linktr.ee/JustMax76" target="_blank" class="text-xs uppercase tracking-widest hover:text-lampara transition-colors border-b border-line-art/30 hover:border-lampara pb-1 flex items-center justify-center md:justify-start gap-1">
-                        <i class="ph-thin ph-link"></i> Contatti & Linktree
+                        <i class="ph-thin ph-link text-sm"></i> Contatti & Linktree
                     </a>
                 </div>
 
                 <!-- Collaborazione (Logo BGSC) -->
                 <div class="flex flex-col items-center md:items-start">
                     <h3 class="text-xs uppercase tracking-widest text-line-art/50 mb-3 flex items-center justify-center md:justify-start gap-2">
-                        <i class="ph-thin ph-dice-three"></i> In collaborazione con
+                        <i class="ph-thin ph-handshake text-lg"></i> In collaborazione con
                     </h3>
-                    <img src="IMG_9604.png" alt="Logo Board Game Social Club" class="h-16 md:h-20 mb-3 filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" onerror="this.src='https://placehold.co/200x80/0b1d3a/e0f2fe?text=Logo+BGSC'">
-                    <a href="https://boardgamesocial.club/tabs/tab-bacheca/board-games" target="_blank" class="text-xs uppercase tracking-widest hover:text-lampara transition-colors border-b border-line-art/30 hover:border-lampara pb-1 flex items-center gap-1">
-                        <i class="ph-thin ph-globe"></i> Visita il sito
+                    <img src="IMG_9604.png" alt="Logo Board Game Social Club" class="h-16 md:h-20 mb-3 object-contain opacity-90 hover:opacity-100 transition-opacity" onerror="this.src='https://placehold.co/200x80/0b1d3a/e0f2fe?text=Logo+BGSC'">
+                    <a href="https://boardgamesocial.club/tabs/tab-bacheca/board-games" target="_blank" class="text-xs uppercase tracking-widest hover:text-lampara transition-colors border-b border-line-art/30 hover:border-lampara pb-1 flex items-center justify-center md:justify-start gap-1">
+                        <i class="ph-thin ph-globe text-sm"></i> Visita il sito
                     </a>
                 </div>
 
                 <!-- Cetara (Logo Comune) -->
                 <div class="flex flex-col items-center md:items-start">
                     <h3 class="text-xs uppercase tracking-widest text-line-art/50 mb-3 flex items-center justify-center md:justify-start gap-2">
-                        <i class="ph-thin ph-map-pin"></i> Ispirato al Comune di
+                        <i class="ph-thin ph-handshake text-lg"></i> In collaborazione con
                     </h3>
-                    <img src="IMG_9605.png" alt="Logo Comune di Cetara" class="h-16 md:h-20 mb-3 filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" onerror="this.src='https://placehold.co/200x80/0b1d3a/e0f2fe?text=Logo+Cetara'">
-                    <div class="flex flex-col gap-2 items-center md:items-start">
-                        <a href="https://www.comune.cetara.sa.it/sito/home" target="_blank" class="text-xs uppercase tracking-widest hover:text-lampara transition-colors inline-block flex items-center gap-1"><i class="ph-thin ph-house"></i> Sito del Comune</a>
-                        <a href="https://www.nottedellelampare.it/" target="_blank" class="text-xs uppercase tracking-widest hover:text-lampara transition-colors inline-block flex items-center gap-1"><i class="ph-thin ph-moon"></i> La Notte delle Lampare</a>
+                    <img src="IMG_9605.png" alt="Logo Comune di Cetara" class="h-16 md:h-20 mb-3 object-contain opacity-90 hover:opacity-100 transition-opacity" onerror="this.src='https://placehold.co/200x80/0b1d3a/e0f2fe?text=Logo+Cetara'">
+                    <div class="flex flex-col gap-2 items-center md:items-start w-full">
+                        <a href="https://www.comune.cetara.sa.it/sito/home" target="_blank" class="text-xs uppercase tracking-widest hover:text-lampara transition-colors inline-block flex items-center justify-center md:justify-start gap-1">
+                            <i class="ph-thin ph-house text-sm"></i> Sito del Comune
+                        </a>
+                        <a href="https://www.nottedellelampare.it/" target="_blank" class="text-xs uppercase tracking-widest hover:text-lampara transition-colors inline-block flex items-center justify-center md:justify-start gap-1">
+                            <i class="ph-thin ph-moon text-sm"></i> La Notte delle Lampare
+                        </a>
                     </div>
                 </div>
 
